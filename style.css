@@ -1,0 +1,33 @@
+body {
+    background-image: url("https://wallpapers.com/images/hd/windows-98-background-mvrmy77vuyblzxba.jpg");
+}
+
+* {
+    font-family: "Pixelated MS Sans Serif";
+}
+
+body {
+    /*-moz-transform: scale(1.0); /* for Firefox, default 1*/
+    zoom:150%; /* For Chrome, IE, default 100%*/
+}
+
+.program-window {
+    position: fixed;
+    inset: 0px;
+    width: 30rem;
+    height: 20rem;
+    max-width: 100vw;
+    max-height: 100dvh;
+    margin: auto;
+  
+}
+
+.task-style {
+    width: 360px;
+    height: 240px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}

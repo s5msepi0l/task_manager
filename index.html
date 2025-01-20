@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+
+
+        <link rel="stylesheet" href="style.css">
+
+        <title>Task manager</title>
+    </head>
+
+    <body>
+        <div class="window program-window">
+            <div class="title-bar"> 
+                <div class="title-bar-text">Task manager</div>
+                
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            
+            <div class="window-body content">
+
+                <pre id="tasks" style="height: 15rem; width: 10rem;">
+                    
+                </pre>
+                    
+                <div class="field-row-stacked" style="width: 200px">
+                    <label for="description">Task description</label>
+                    <input id="description" placeholder="" type="text" />
+                    
+                    <button id="enter" style="width: 24px;">Enter</button>
+                </div>
+                
+            </div>
+
+
+        </div>
+
+        <script src="src/app.js" type="module"></script>
+    </body>
+</html>
