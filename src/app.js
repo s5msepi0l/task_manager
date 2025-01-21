@@ -4,6 +4,8 @@ import Task from "./task.js";
 const enter_button = document.querySelector("#enter");
 const text_input =   document.querySelector("#description");
 
+var selected_span = null;
+
 const placeholder_tasks = [
     "Go for a walk with your dog",
     "Clean your room",
@@ -38,7 +40,37 @@ function update_placeholder() {
         text_input.placeholder = placeholder;
 }
 
+function row_selector() {
+    const spans = document.querySelectorAll("pre span");
+
+    for (let i = 0; i<spans.length; i++) {
+        spans[i].setAttribute("selected", false);
+        spans[i].addEventListener("click", (event) => {
+            if (selected_span != null) {
+                selected_span.classList.toggle("highlighted");
+            }
+
+            // remove it
+            if (selected_span == spans[i]) {
+                let str = spans[i].innerHTML;
+                
+                task_manager.onRemoveTask(str)
+
+                task_manager.update();
+                row_selector();
+            }
+
+            selected_span = spans[i];
+            selected_span.classList.toggle("highlighted");
+
+        })
+
+    }
+}
+
 function update_tasks() {
+    task_manager.update();
+    row_selector();
     update_placeholder();
 }
 
@@ -46,12 +78,13 @@ enter_button.addEventListener("click", () => {
     const description = text_input.value;
     text_input.value = "";
 
-    const task = new Task(description, task_manager.onRemoveTask);
-    task_manager.add(task);
+    if (description.length > 0) {
+        const task = new Task(description, task_manager.onRemoveTask);
+        task_manager.add(task);
 
-    console.log(description);
-    
-    update_tasks();
+        
+        update_tasks();
+    }
 })
 
-update_placeholder();
+update_tasks();

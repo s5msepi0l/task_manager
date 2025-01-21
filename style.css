@@ -31,3 +31,19 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+pre {
+    display: flex;
+
+    justify-content: flex-start;
+    text-align: start;
+}
+
+#tasks {
+    display: block;
+}
+
+.highlighted {
+    background-color: navy;
+    color: white;
+}
