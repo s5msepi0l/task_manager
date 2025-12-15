@@ -43,6 +43,35 @@ pre {
     display: block;
 }
 
+.task {
+    display: flex;
+
+    height: 1rem;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 0rem;
+
+    font-size: 10px;
+    
+    text-wrap: wrap;
+}
+
+.task div {
+    display: flex;
+    align-items: center;
+}
+
+.task img {
+    height: 10px;
+    margin-right: 4px;
+}
+
+.task > button {
+    all: unset;
+}
+
 .highlighted {
     background-color: navy;
     color: white;
